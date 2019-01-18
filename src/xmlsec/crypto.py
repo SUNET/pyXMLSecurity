@@ -230,9 +230,12 @@ class XMLSecCryptoREST(XMlSecCrypto):
             if r.status_code != requests.codes.ok:
                 r.raise_for_status()
             msg = r.json()
-            if not 'signed' in msg:
+            if 'signed' not in msg:
                 raise ValueError("Missing signed data in response message")
-            return msg['signed'].decode('base64')
+            signed_msg = msg['signed']
+            if not isinstance(signed_msg, six.binary_type):
+                signed_msg = signed_msg.encode("utf-8")
+            return base64.b64decode(signed_msg)
         except Exception as ex:
             from traceback import print_exc
             print_exc()
