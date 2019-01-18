@@ -232,7 +232,7 @@ class XMLSecCryptoREST(XMlSecCrypto):
             return msg['signed'].decode('base64')
         except Exception as ex:
             from traceback import print_exc
-            print_exc(ex)
+            print_exc()
             raise XMLSigException(ex)
 
 
