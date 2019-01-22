@@ -1,7 +1,7 @@
 # Disabled as we want to use the offical package
 disabled: false
 git:
-  branch: leifj-more-py3-compat
+  branch: IdentityPython-more-py3-compat
 builders:
   - script
 triggers:
