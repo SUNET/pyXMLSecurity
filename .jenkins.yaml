@@ -1,7 +1,5 @@
 # Disabled as we want to use the offical package
 disabled: false
-git:
-  branch: IdentityPython-more-py3-compat
 builders:
   - script
 triggers:
