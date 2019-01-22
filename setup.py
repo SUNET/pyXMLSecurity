@@ -9,7 +9,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-version = '0.19dev1'
+version = '0.20dev1'
 
 install_requires = [
     'defusedxml', 'lxml', 'pyconfig', 'requests', 'cryptography', 'six'
@@ -42,7 +42,6 @@ setup(name='pyXMLSecurity',
     },
     zip_safe=False,
     install_requires=install_requires,
-    requires=install_requires,
     extras_require=extras_require,
     entry_points={
           'console_scripts': ['xmlsign=xmlsec.tools:sign_cmd','xmlverify=xmlsec.tools:verify_cmd']
